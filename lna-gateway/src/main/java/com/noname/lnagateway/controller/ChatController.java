@@ -3,7 +3,7 @@ package com.noname.lnagateway.controller;
 import com.noname.lnagateway.service.ProducerService;
 import com.noname.lnaprocessordto.MessageRequestDTO;
 import com.noname.lnasessiondto.MessageDTO;
-import com.noname.lnasessiondto.enumerated.MessageAuthor;
+import com.noname.lnasessiondto.enumerated.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +20,7 @@ public class ChatController {
         System.out.println("Received message: " + message.getMessage());
         producerService.sendCustomDto(message);
         return MessageDTO.builder()
-                .sender(MessageAuthor.SYSTEM)
+                .role(Role.SYSTEM)
                 .content("TEst TEst")
                 .build();
     }
