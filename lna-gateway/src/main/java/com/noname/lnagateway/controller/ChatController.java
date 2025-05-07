@@ -23,6 +23,7 @@ public class ChatController {
                 .role(Role.SYSTEM)
                 .content("TEst TEst")
                 .build();
+
     }
 
 }
