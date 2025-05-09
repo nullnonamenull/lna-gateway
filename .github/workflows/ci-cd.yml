@@ -20,9 +20,14 @@ jobs:
           distribution: temurin
           java-version: 21
           cache: maven
-          server-id: github
-          server-username: ${{ secrets.GH_PKG_USER }}
-          server-password: ${{ secrets.GH_PKG_TOKEN }}
+
+      - name: Configure Maven auth for GitHub Packages
+        run: |
+          mkdir -p ~/.m2
+          cp .github/settings.xml ~/.m2/settings.xml
+        env:
+          GH_PKG_USER: ${{ secrets.GH_PKG_USER }}
+          GH_PKG_TOKEN: ${{ secrets.GH_PKG_TOKEN }}
 
       - name: Maven verify
         run: mvn -B verify
