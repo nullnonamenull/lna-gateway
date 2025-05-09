@@ -25,9 +25,7 @@ jobs:
         distribution: temurin
         java-version: 21
         cache: maven
-        server-id: github
-        # <username> i <password> to NAZWY zmiennych,
-        # a wartości tych zmiennych masz w env powyżej
+        server-id: github-session,github-processor
         server-username: GITHUB_ACTOR
         server-password: GH_PKG_TOKEN
 
