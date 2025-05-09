@@ -1,4 +1,3 @@
-# .github/workflows/ci-cd.yml
 name: ci-cd
 on:
   push:
