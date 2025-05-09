@@ -21,12 +21,8 @@
 
 	<repositories>
 		<repository>
-			<id>github-session</id>
-			<url>https://maven.pkg.github.com/nullnonamenull/lna-session-dto</url>
-		</repository>
-		<repository>
-			<id>github-processor</id>
-			<url>https://maven.pkg.github.com/nullnonamenull/lna-processor-dto</url>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/nullnonamenull</url>
 		</repository>
 	</repositories>
 
