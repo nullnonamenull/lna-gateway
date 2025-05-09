@@ -1,3 +1,4 @@
+# .github/workflows/ci-cd.yml
 name: ci-cd
 on:
   push:
@@ -6,7 +7,7 @@ on:
 
 permissions:
   contents: read
-  packages: read
+  packages: read            # ← wymagane do pobierania paczek
 
 env:
   IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/lna-gateway
@@ -24,10 +25,9 @@ jobs:
           java-version: 21
           cache: maven
           server-id: github
-          server-username: ${{ github.actor }}
-          server-password: ${{ secrets.GH_PKG_TOKEN }}
+          server-username: ${{ github.actor }}          # lub ${{ secrets.GH_PKG_USER }}
+          server-password: ${{ secrets.GH_PKG_TOKEN }}  # PAT: read:packages (+ repo → prywatne paczki)
 
-      # ---------- DEBUG START ----------
       - name: settings.xml (masked)
         run: |
           echo "::group::settings.xml"
@@ -36,17 +36,15 @@ jobs:
 
       - name: curl test lna-session-dto 0.0.8
         run: |
-          curl -s -o /dev/null -w "lna-session-dto -> %{http_code}\n" \
+          curl -s -o /dev/null -w "session-dto ➜ %{http_code}\n" \
                -u "${{ github.actor }}:${{ secrets.GH_PKG_TOKEN }}" \
                https://maven.pkg.github.com/nullnonamenull/lna-session-dto/com/noname/lna-session-dto/0.0.8/lna-session-dto-0.0.8.pom
 
       - name: curl test lna-processor-dto 0.0.5
         run: |
-          curl -s -o /dev/null -w "lna-processor-dto -> %{http_code}\n" \
+          curl -s -o /dev/null -w "processor-dto ➜ %{http_code}\n" \
                -u "${{ github.actor }}:${{ secrets.GH_PKG_TOKEN }}" \
                https://maven.pkg.github.com/nullnonamenull/lna-processor-dto/com/noname/lna-processor-dto/0.0.5/lna-processor-dto-0.0.5.pom
-      # ---------- DEBUG END ------------
-
       - name: Build & test
         run: mvn -B -f lna-gateway/pom.xml verify
 
