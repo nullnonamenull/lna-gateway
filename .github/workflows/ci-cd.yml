@@ -19,7 +19,7 @@ jobs:
       - name: Set up Java and Maven settings
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          java-version: '21'
           distribution: 'temurin'
           server-id: github
           server-username: GITHUB_ACTOR
