@@ -40,7 +40,7 @@ jobs:
       - name: Build & push image
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: ./lna-gateway
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
