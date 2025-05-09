@@ -1,3 +1,4 @@
+# .github/workflows/ci-cd.yml
 name: ci-cd
 on:
   push:
@@ -6,7 +7,7 @@ on:
 
 permissions:
   contents: read
-  packages: read
+  packages: read            # ← wymagane do pobierania paczek
 
 env:
   IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/lna-gateway
@@ -24,8 +25,8 @@ jobs:
           java-version: 21
           cache: maven
           server-id: github
-          server-username: ${{ github.actor }}
-          server-password: ${{ secrets.GH_PKG_TOKEN }}
+          server-username: ${{ github.actor }}          # lub ${{ secrets.GH_PKG_USER }}
+          server-password: ${{ secrets.GH_PKG_TOKEN }}  # PAT: read:packages (+ repo → prywatne paczki)
 
       - name: settings.xml (masked)
         run: |
