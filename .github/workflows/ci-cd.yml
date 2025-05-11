@@ -37,6 +37,12 @@ jobs:
         env:
           GH_PKG_TOKEN: ${{ secrets.GH_PKG_TOKEN }}
 
+      - name: Extract project version from pom.xml
+        id: extract_version
+        run: |
+          VERSION=$(xmllint --xpath "/*[local-name()='project']/*[local-name()='version']/text()" lna-gateway/pom.xml)
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
       - uses: docker/setup-buildx-action@v3
 
       - name: Docker login
