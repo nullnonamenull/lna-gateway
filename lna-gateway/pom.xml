@@ -19,19 +19,6 @@
 		<java.version>21</java.version>
 	</properties>
 
-<!--	<repositories>-->
-<!--		<repository>-->
-<!--   		 	<id>github-session</id>-->
-<!--    			<url>https://maven.pkg.github.com/nullnonamenull/lna-session-dto</url>-->
-<!--  		</repository>-->
-<!--	  	<repository>-->
-<!--	    		<id>github-processor</id>-->
-<!--	    		<url>https://maven.pkg.github.com/nullnonamenull/lna-processor-dto</url>-->
-<!--	  	</repository>-->
-<!--	</repositories>-->
-
-
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -55,17 +42,19 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>com.noname</groupId>-->
-<!--			<artifactId>lna-session-dto</artifactId>-->
-<!--			<version>0.0.8</version>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>com.noname</groupId>-->
-<!--			<artifactId>lna-processor-dto</artifactId>-->
-<!--			<version>0.0.5</version>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>com.noname</groupId>
+			<artifactId>lna-processor-dto</artifactId>
+			<version>0.0.5</version>
+		</dependency>
 	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/nullnonamenull/lna-processor-dto</url>
+		</repository>
+	</repositories>
 
 	<build>
 		<plugins>
