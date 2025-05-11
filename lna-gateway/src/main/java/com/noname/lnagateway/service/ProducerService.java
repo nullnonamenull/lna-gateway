@@ -1,6 +1,6 @@
 package com.noname.lnagateway.service;
 
-import com.noname.lnaprocessordto.MessageRequestDTO;
+import com.noname.lnagateway.MessageRequestDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
