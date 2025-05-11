@@ -33,13 +33,11 @@ jobs:
           GH_PKG_USER: ${{ github.actor }}
           GH_PKG_TOKEN: ${{ secrets.GH_PKG_TOKEN }}
 
-      # ── 3. compile & test ─────────────────────────────
       - name: Build with Maven
         run: mvn -B -f lna-gateway/pom.xml clean package
         env:
           GH_PKG_TOKEN: ${{ secrets.GH_PKG_TOKEN }}
 
-      # ── 4. build & push Docker image ─────────────────
       - uses: docker/setup-buildx-action@v3
 
       - name: Docker login

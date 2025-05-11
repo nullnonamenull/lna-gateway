@@ -1,10 +1,9 @@
 package com.noname.lnagateway.controller;
 
-import com.noname.lnagateway.MessageDTO;
-import com.noname.lnagateway.Role;
 import com.noname.lnagateway.service.ProducerService;
-
 import com.noname.lnaprocessordto.MessageRequestDTO;
+import com.noname.lnasessiondto.MessageDTO;
+import com.noname.lnasessiondto.enumerated.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
