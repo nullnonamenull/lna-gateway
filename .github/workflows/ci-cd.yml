@@ -22,7 +22,7 @@ jobs:
           java-version: 21
           cache: maven
           server-id: github
-          server-username: ${{ github.actor }}
+          server-username: nullnonamenull
           server-password: ${{ secrets.GH_PKG_TOKEN }}
 
       - name: Build JAR
