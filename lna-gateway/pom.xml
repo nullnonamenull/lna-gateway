@@ -52,7 +52,13 @@
 	<repositories>
 		<repository>
 			<id>github</id>
-			<url>https://maven.pkg.github.com/nullnonamenull/lna-processor-dto</url>
+			<url>https://maven.pkg.github.com/nullnonamenull</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
 		</repository>
 	</repositories>
 
