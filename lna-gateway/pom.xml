@@ -52,7 +52,7 @@
         <dependency>
             <groupId>com.noname</groupId>
             <artifactId>lna-processor-dto</artifactId>
-            <version>0.0.5</version>
+            <version>0.0.7</version>
         </dependency>
         <dependency>
             <groupId>com.noname</groupId>
