@@ -12,6 +12,7 @@ permissions:
 env:
   DOCKER_IMAGE: ${{ secrets.DOCKER_USERNAME }}/lna-gateway
 
+
 jobs:
   maven-build:
     name: Maven Build
