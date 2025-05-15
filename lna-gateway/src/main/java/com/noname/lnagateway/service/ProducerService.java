@@ -16,6 +16,7 @@ public class ProducerService {
 
     public void sendCustomDto(final MessageRequestDTO messageRequestDTO) {
         rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, messageRequestDTO);
+
     }
 
 }
