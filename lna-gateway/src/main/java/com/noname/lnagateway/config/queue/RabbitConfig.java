@@ -1,6 +1,5 @@
 package com.noname.lnagateway.config.queue;
 
-import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
@@ -22,5 +21,4 @@ public class RabbitConfig {
         return rabbitTemplate;
     }
 
-    // Remove the connectionFactory() bean completely
 }
